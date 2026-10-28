@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose a site</title>
+  <meta name="description" content="Open WME Core or IPPF Germany." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+      color: #1c1917;
+      background:
+        radial-gradient(ellipse 80% 50% at 15% 0%, rgba(196, 30, 58, 0.12), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 90% 100%, rgba(154, 115, 36, 0.16), transparent 50%),
+        #f6f3ee;
+    }
+
+    main {
+      width: min(760px, 100%);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 28px;
+      color: #5f5a52;
+      font-size: 1.05rem;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .choice {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      min-height: 240px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      background: #fffdf8;
+      border: 1px solid rgba(28, 25, 23, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(28, 25, 23, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .choice:hover,
+    .choice:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 48px rgba(28, 25, 23, 0.12);
+      outline: none;
+    }
+
+    .choice:focus-visible {
+      box-shadow: 0 0 0 3px #fffdf8, 0 0 0 5px #9a7324;
+    }
+
+    .choice img {
+      height: 72px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .choice h2 {
+      margin: auto 0 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .choice span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .choice.wme span {
+      color: #fffdf8;
+      background: #8e1630;
+    }
+
+    .choice.germany span {
+      color: #1c1917;
+      background: #f0d48a;
+    }
+
+    @media (max-width: 640px) {
+      .choices {
+        grid-template-columns: 1fr;
+      }
+
+      .choice {
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Choose a site</h1>
+    <p>Open one of the two sites in this folder.</p>
+    <div class="choices">
+      <a class="choice wme" href="wmecore/">
+        <img src="wmecore/logo/logo_wme_Dark.png" alt="WME logo" />
+        <h2>WME Core</h2>
+        <span>Open WME Core</span>
+      </a>
+      <a class="choice germany" href="germany/">
+        <img src="germany/images/ippf-germany-logo.webp" alt="IPPF Germany logo" />
+        <h2>Germany</h2>
+        <span>Open Germany</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
