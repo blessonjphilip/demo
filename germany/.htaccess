@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /germany/
+
+  # Visiting /css/, /js/, /images/ (or any other folder) goes to the homepage.
+  # Files such as /css/style.css still load normally.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^.+/?$ /germany/ [R=301,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
