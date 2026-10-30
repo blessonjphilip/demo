@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Choose a site</title>
-  <meta name="description" content="Open WME Core or IPPF Germany." />
+  <meta name="description" content="Open WME Core, IPPF Germany or Global Missions India." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -51,7 +51,7 @@
 
     .choices {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
 
@@ -117,6 +117,11 @@
       background: #f0d48a;
     }
 
+    .choice.gmi span {
+      color: #fff;
+      background: #4a2380;
+    }
+
     @media (max-width: 640px) {
       .choices {
         grid-template-columns: 1fr;
@@ -131,7 +136,7 @@
 <body>
   <main>
     <h1>Choose a site</h1>
-    <p>Open one of the two sites in this folder.</p>
+    <p>Open one of the sites in this folder.</p>
     <div class="choices">
       <a class="choice wme" href="wmecore/">
         <img src="wmecore/logo/logo_wme_Dark.png" alt="WME logo" />
@@ -142,6 +147,11 @@
         <img src="germany/images/ippf-germany-logo.webp" alt="IPPF Germany logo" />
         <h2>Germany</h2>
         <span>Open Germany</span>
+      </a>
+      <a class="choice gmi" href="gmi/">
+        <img src="gmi/assets/img/logo.svg" alt="Global Missions India logo" />
+        <h2>Global Missions India</h2>
+        <span>Open GMI</span>
       </a>
     </div>
   </main>
